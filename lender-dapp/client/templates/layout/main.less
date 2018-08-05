@@ -1,0 +1,70 @@
+/* LESS declarations go here */
+@import '{ethereum:dapp-styles}/dapp-styles.less';
+.dapp-container, .dapp-content {
+    max-width: none;
+    width: 100%;
+    background-image: url('/LenderApp logo2.PNG');
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: top;
+}
+.dapp-box {
+    flex-direction: row;
+}
+
+.agreement {
+    width: 2 * 192px;
+    height: unset;
+    .contract {
+        overflow : hidden;
+    }
+    .description {
+        margin-bottom:1.5em;
+    }
+    .adressing {
+        margin-bottom:0.5em;
+    }
+}
+
+.description-input-container {
+    margin-bottom: 0.5em;
+}
+
+.description-input-container > textarea {
+    margin-top: 0px;
+    width: 440px;
+}
+
+.dapp-address-input {
+    margin-bottom: 1.5em;
+}
+.dapp-address-input > input {
+    font-size: 90%;
+}
+
+.status {
+    display: inline-block;
+    margin: 0.5em 1em 0.5em 0;
+    padding: 0.5em 1em;
+    border-radius:20px;
+    background: lightgrey;
+    font-weight: bold;
+}
+
+    .Created {
+        background: grey;
+        color: white;
+    }
+    .Accepted {
+        background: rgba(106, 195, 96, 1);
+        color:white;
+    }
+    .Declined {
+        background: red;
+        color: white;
+    }
+    .Returned {
+        background: rgba(247, 134, 28, 1);;
+        color: white;
+    }
+

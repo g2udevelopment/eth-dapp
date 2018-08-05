@@ -1,0 +1,7 @@
+version: '2'
+services:
+  testrpc:
+    image: "harshjv/testrpc"
+    command: "testrpc -m 'pig recipe two develop leave blind warfare option remove burden october tennis'"
+    ports:
+     - "8545:8545"

@@ -1,0 +1,59 @@
+<template name="agreements">
+  
+
+  <h2>{{agreements.count}} Agreements</h2>
+
+  <div>
+
+  <div class="dapp-box add agreement">
+    <label>Description for a new agreement:</label>
+    <div class="description-input-container">
+      <textarea id="description" rows="6" cols="160"></textarea>
+    </div>
+    <label>Send to:</label>
+    {{> dapp_addressInput placeholder="Account: (e.g. 0x891644bc1D5869824868DFC29b4bbFeb9A0327b3" value="0x891644bc1D5869824868DFC29b4bbFeb9A0327b3" }}
+    <button id="btnAdd"  class="dapp-block-button">
+        Add agreement
+    </button>
+  </div>
+  
+
+  {{#if agreements.count}}
+  
+    {{#each agreement in agreements}}
+      <div class="dapp-box agreement">
+        <h2 title="{{agreement.title}}">{{agreement.title}}</h2>
+        <span class="contract" title="{{agreement.contract}}">{{agreement.contract}}</span>
+        <div class="description">{{agreement.description}}</div>
+        <div class="adressing">
+          <label>From</label>
+          <div>
+              {{> dapp_identicon identity=agreement.from class="dapp-small"}}
+              <span class="from">{{agreement.from}}</span>
+          </div>
+          <label>To</label>
+          <div>
+              {{> dapp_identicon identity=agreement.to class="dapp-small"}}
+              <span class="to">{{agreement.to}}</span>
+          </div>
+        </div>
+        <span class="status {{agreement.status}}" title="{{agreement.status}}">{{agreement.status}}</span>
+        
+          {{#with agreement=agreement }}
+          {{#if isCreated}}
+            <button class="dapp-block-button dapp-small btnAccept">Accept</button>
+            <button class="dapp-block-button dapp-small btnDecline">Decline</button>
+            {{/if}}
+          {{#if isAccepted}}
+            <button class="dapp-block-button dapp-small btnReturned">Return</button>
+          {{/if}}
+          {{/with}}
+        
+      </div>
+    {{/each}}
+
+  {{/if}}
+  </div>
+  
+  
+</template>
